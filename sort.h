@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "macro_functions.h"
+#include "deck.h"
 
 /**
  * struct listint_s - Doubly linked list node
