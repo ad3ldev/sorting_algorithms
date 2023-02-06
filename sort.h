@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "macro_functions.h"
 
 /**
  * struct listint_s - Doubly linked list node
