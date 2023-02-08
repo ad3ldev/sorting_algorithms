@@ -24,13 +24,12 @@ int lomuto_partition(int *array, size_t size, int low, int high)
 			temp = array[i];
 			array[i] = array[j];
 			array[j] = temp;
-			print_array(array, size);
 		}
 	}
 	i++;
 	temp = array[i];
-	array[i] = array[j];
-	array[j] = temp;
+	array[i] = array[high];
+	array[high] = temp;
 	print_array(array, size);
 	return (i);
 }
