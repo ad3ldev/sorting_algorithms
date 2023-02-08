@@ -8,19 +8,28 @@
  */
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *node = NULL;
-	listint_t *next_node = NULL;
-	listint_t *in_node = NULL;
+	listint_t *iter, *insert, *temp;
 
-	if (list == NULL || *list == NULL)
+	if (list == NULL || *list == NULL || (*list)->next == NULL)
 		return;
 
-	for (node = (*list)->next; node; node = next_node)
+	for (iter = (*list)->next; iter != NULL; iter = temp)
 	{
-		next_node = node->next;
-		for (in_node = node; IF_PREV_BIGGER(in_node);)
+		temp = iter->next;
+		insert = iter->prev;
+		while (insert != NULL && iter->n < insert->n)
 		{
-			SWAP_DOUBLE_LIST(in_node, list, listint_t *);
+			insert->next = iter->next;
+			if (iter->next != NULL)
+				iter->next->prev = insert;
+			iter->prev = insert->prev;
+			iter->next = insert;
+			if (insert->prev != NULL)
+				insert->prev->next = iter;
+			else
+				*list = iter;
+			insert->prev = iter;
+			insert = iter->prev;
 			print_list((const listint_t *)*list);
 		}
 	}
