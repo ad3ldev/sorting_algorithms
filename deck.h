@@ -1,6 +1,9 @@
 #ifndef DECK_H
 #define DECK_H
 
+
+#include <stdlib.h>
+
 /**
  * enum kind_e - kind of symbol on card
  *
@@ -44,5 +47,11 @@ typedef struct deck_node_s
 	struct deck_node_s *prev;
 	struct deck_node_s *next;
 } deck_node_t;
+
+int _strcmp(const char *s1, const char *s2);
+char get_value(deck_node_t *card);
+void insertion_sort_deck_kind(deck_node_t **deck);
+void insertion_sort_deck_value(deck_node_t **deck);
+void sort_deck(deck_node_t **deck);
 
 #endif /* DECK_H */
