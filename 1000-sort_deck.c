@@ -1,3 +1,5 @@
+#include "deck.h"
+
 /**
  * _strcmp - Compares two strings.
  * @s1: The first string to be compared.
@@ -40,6 +42,7 @@ char get_value(deck_node_t *card)
 		return (4);
 	if (_strcmp(card->card->value, "5") == 0)
 		return (5);
+
 	if (_strcmp(card->card->value, "6") == 0)
 		return (6);
 	if (_strcmp(card->card->value, "7") == 0)
